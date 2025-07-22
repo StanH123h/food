@@ -3,6 +3,70 @@
   margin: 0 auto;
 }
 
+/* 每日打卡区域 */
+.daily-checkin-section {
+  background: linear-gradient(135deg, #a5d6a7, #66bb6a);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  color: white;
+  text-align: center;
+}
+
+.checkin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.checkin-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.user-points {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.checkin-content p {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+.checkin-button {
+  background: white;
+  color: #4caf50;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.checkin-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.checkin-button:disabled {
+  background: #e0e0e0;
+  color: #9e9e9e;
+  cursor: not-allowed;
+}
+
+.checkin-button.checked-in {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
 /* 管理员控制面板 */
 .admin-controls {
   background: #e8f5e9;

@@ -1,7 +1,8 @@
 // 主页组件
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { useFood } from '../../context/FoodContext';
+import { missionService } from '../../services/mission';
 import FoodCard from '../../components/FoodCard';
 import './HomePage.css';
 
@@ -14,6 +15,26 @@ function HomePage({ language }) {
     desc: '',
     link: ''
   });
+  
+  // 打卡相关状态
+  const [isCheckedIn, setIsCheckedIn] = useState(false);
+  const [userPoints, setUserPoints] = useState(0);
+
+  // 更新打卡状态
+  const updateCheckinStatus = () => {
+    if (user) {
+      setIsCheckedIn(missionService.isTodayCheckedIn(user.username));
+      setUserPoints(missionService.getUserPoints(user.username));
+    } else {
+      setIsCheckedIn(false);
+      setUserPoints(0);
+    }
+  };
+
+  // 组件挂载时和用户变化时更新打卡状态
+  useEffect(() => {
+    updateCheckinStatus();
+  }, [user]);
 
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
@@ -72,12 +93,46 @@ function HomePage({ language }) {
     if (fileInput) fileInput.value = '';
   };
 
+  // 打卡操作
+  const handleCheckIn = async () => {
+    if (!user) {
+      alert('请先登录后再打卡');
+      return;
+    }
+
+    try {
+      const result = missionService.checkIn(user.username);
+      alert(result.message);
+      updateCheckinStatus(); // 更新打卡状态
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
   if (isLoading) {
     return <div className="loading">加载食材数据中...</div>;
   }
 
   return (
     <div className="home-page">
+      {/* 每日打卡区域 */}
+      <div className="daily-checkin-section">
+        <div className="checkin-header">
+          <h2>🍽️ 每日一膳打卡</h2>
+          <div className="user-points">积分: {userPoints}</div>
+        </div>
+        <div className="checkin-content">
+          <p>坚持每日健康饮食打卡，积累积分获得奖励！</p>
+          <button 
+            className={`checkin-button ${isCheckedIn ? 'checked-in' : ''}`}
+            onClick={handleCheckIn}
+            disabled={isCheckedIn}
+          >
+            {isCheckedIn ? '✅ 今日已打卡' : '📝 立即打卡 (+10积分)'}
+          </button>
+        </div>
+      </div>
+
       {/* 管理员添加内容区域 */}
       {user?.isAdmin && (
         <div className="admin-controls">
