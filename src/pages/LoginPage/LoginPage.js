@@ -1,14 +1,23 @@
 // 登录页面组件
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 import './LoginPage.css';
 
-function LoginPage({ onShowRegister }) {
+function LoginPage() {
   const [formData, setFormData] = useState({
     username: '',
     password: ''
   });
-  const { login, error } = useAuth();
+  const { login, error, user } = useAuth();
+  const navigate = useNavigate();
+
+  // 登录成功后跳转到每日一膳
+  useEffect(() => {
+    if (user) {
+      navigate('/daily-meal');
+    }
+  }, [user, navigate]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -50,7 +59,7 @@ function LoginPage({ onShowRegister }) {
         />
         <div className="button-group">
           <button type="submit">登录</button>
-          <button type="button" onClick={onShowRegister}>注册</button>
+          <button type="button" onClick={() => navigate('/register')}>注册</button>
         </div>
         {error && <p className="error-message">{error}</p>}
       </form>
