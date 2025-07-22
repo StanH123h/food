@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# 适老化食疗平台 - React版本
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+基于React + JavaScript重构的现代化适老化食疗平台，专为老年用户设计的食材推荐和健康管理系统。
 
-## Available Scripts
+## ✨ 功能特性
 
-In the project directory, you can run:
+### 🔐 用户系统
+- 用户注册与登录
+- 管理员权限控制（默认管理员：swh/123456swh）
+- 安全的密码加密存储
 
-### `npm start`
+### 🍄 食材管理
+- 食材卡片展示
+- 管理员可添加、编辑、删除食材
+- 支持图片上传
+- 食材信息语音播报（普通话/粤语）
+- 购买链接管理
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 📅 打卡任务
+- 每日签到系统（+10积分）
+- 积分累积机制
+- 本周打卡统计
+- 全站排行榜
+- 奖励兑换系统
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 👁️ 人脸识别
+- 实时人脸检测
+- 智能距离判断
+- 自动提示大字体模式
+- 摄像头权限管理
 
-### `npm test`
+### 🎛️ 适老化设计
+- 大字体模式切换
+- 语音播报功能
+- 简洁直观的界面
+- 高对比度配色方案
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ 技术栈
 
-### `npm run build`
+- **前端框架**: React 18
+- **状态管理**: Context API
+- **样式方案**: CSS Modules
+- **人脸识别**: face-api.js
+- **数据存储**: localStorage
+- **构建工具**: Create React App
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 快速开始
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 安装依赖
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 开发环境
+```bash
+npm start
+```
+访问 http://localhost:3000
 
-### `npm run eject`
+### 生产构建
+```bash
+npm run build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 👤 默认账号
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **管理员**: swh / 123456swh
+- **普通用户**: 可自行注册
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📝 使用说明
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **登录/注册** - 使用管理员账号或注册新用户
+2. **主页** - 浏览食材，管理员可添加新食材
+3. **打卡任务** - 每日签到获得积分，查看排行榜
+4. **人脸识别** - 允许摄像头权限以启用距离检测功能
 
-## Learn More
+## ⚠️ 注意事项
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- 人脸识别功能需要在HTTPS或localhost环境下使用
+- 需要允许浏览器访问摄像头权限
+- 建议使用Chrome、Firefox或Safari浏览器
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**适老化食疗平台** - 用科技关爱老人健康 ❤️

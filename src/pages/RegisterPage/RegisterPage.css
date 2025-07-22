@@ -1,0 +1,8 @@
+/* 复用登录页面的样式 */
+@import '../LoginPage/LoginPage.css';
+
+.success-message {
+  color: green;
+  text-align: center;
+  margin-top: 0.5rem;
+}

@@ -1,38 +1,96 @@
-.App {
+/* 主应用样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* 大字体模式 */
+.large-font {
+  font-size: 1.5em;
+}
+
+/* 页面头部 */
+header {
+  background-color: #4caf50;
+  color: white;
+  padding: 1rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-controls {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.header-controls button {
+  padding: 0.5rem 1rem;
+  font-size: 1em;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
   color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.header-controls button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.user-info {
+  line-height: 2rem;
+}
+
+/* 导航按钮 */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.nav-buttons button {
+  background-color: #388e3c;
+  border: none;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.nav-buttons button:hover {
+  background-color: #2e7d32;
+}
+
+.nav-buttons button.active {
+  background-color: #1b5e20;
+}
+
+/* 主内容区域 */
+main {
+  max-width: 800px;
+  margin: auto;
+  padding: 1rem;
+}
+
+/* 加载状态 */
+.loading {
+  text-align: center;
+  font-size: 1.2em;
+  padding: 2rem;
 }

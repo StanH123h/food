@@ -1,0 +1,1 @@
+export { FoodProvider, useFood } from './FoodContext';

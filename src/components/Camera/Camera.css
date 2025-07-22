@@ -1,0 +1,104 @@
+/* 摄像头小窗口右上角样式 */
+.camera-feed {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 160px;
+  height: 120px;
+  border: 2px solid #4caf50;
+  border-radius: 8px;
+  z-index: 1000;
+  background: black;
+  transition: all 0.3s ease;
+}
+
+.camera-feed.small {
+  width: 80px;
+  height: 60px;
+}
+
+.camera-feed.hidden {
+  display: none;
+}
+
+.camera-controls {
+  position: fixed;
+  top: 135px;
+  right: 10px;
+  z-index: 1000;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.camera-controls button {
+  padding: 5px 8px;
+  font-size: 0.8em;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  white-space: nowrap;
+}
+
+.camera-controls button:hover {
+  background-color: #45a049;
+}
+
+.camera-error {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 160px;
+  height: 120px;
+  border: 2px solid #f44336;
+  border-radius: 8px;
+  z-index: 1000;
+  background: #ffebee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-content {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.error-content p {
+  color: #c62828;
+  font-size: 0.8em;
+  margin-bottom: 0.5rem;
+}
+
+.error-content button {
+  padding: 4px 8px;
+  font-size: 0.7em;
+  border: none;
+  border-radius: 4px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+}
+
+.error-content button:hover {
+  background-color: #d32f2f;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .camera-feed {
+    width: 120px;
+    height: 90px;
+  }
+  
+  .camera-feed.small {
+    width: 60px;
+    height: 45px;
+  }
+  
+  .camera-controls {
+    top: 105px;
+  }
+}

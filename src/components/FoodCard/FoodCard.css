@@ -1,0 +1,83 @@
+.food-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.food-card img {
+  max-width: 100%;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.food-card h3 {
+  margin: 0.5rem 0;
+  color: #2e7d32;
+}
+
+.food-card p {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.speak-btn {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1em;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.speak-btn:hover {
+  background-color: #45a049;
+}
+
+/* 管理员编辑删除按钮 */
+.edit-btn,
+.delete-btn {
+  position: absolute;
+  top: 10px;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+.edit-btn {
+  right: 70px;
+  background-color: #2196f3;
+}
+
+.edit-btn:hover {
+  background-color: #1976d2;
+}
+
+.delete-btn {
+  right: 10px;
+  background-color: #f44336;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+.buy-link {
+  display: block;
+  margin-top: 0.5rem;
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.buy-link:hover {
+  text-decoration: underline;
+}
